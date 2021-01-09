@@ -5,6 +5,8 @@ Medium Green: #55c57a
 Dark Green: #28b485
  */
 
+@import "base/base";
+
 $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
@@ -146,54 +148,54 @@ body {
     transform: translate(0);
   }
 }
-.btn:link,
-.btn:visited{
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all .2s;
-  position: relative;
-}
-.btn:hover {
-  /*we use a negative value to make the button go up. */
-  transform: translateY(-.3rem);
-  /*this is the shadow....0.2 makes it opaque*/
-  box-shadow: 0 1rem 2rem rgba($color-black,.2);
-}
-.btn:active{
-  transform: translateY(-.1rem);
-  box-shadow: 0 .5rem 1rem rgba($color-black,.2);
 
-}
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
-.btn::after{
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s;
+.btn{
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+  &:hover {
+    /*we use a negative value to make the button go up. */
+    transform: translateY(-.3rem);
+    /*this is the shadow....0.2 makes it opaque*/
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+    &::after{
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  &--white {
+    background-color: rgba($color-white);
+    color: $color-grey-dark;
+    &::after{
+      background-color: rgba($color-white);
+    }
+  }
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
 
-}
-.btn--white::after{
-  background-color: $color-white;
-}
-
-.btn:hover::after{
-  transform: scaleX(1.25) scale(1.6);
-  /*This opacity level below makes it look like it's fading out. '*/
-  opacity: 0;
-}
-.btn--animated{
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards;
+    &--animated{
+      animation: movieInBottom .5s ease-out .75s;
+      animation-fill-mode: backwards;
+    }
+  }
 }
