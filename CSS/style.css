@@ -24,12 +24,20 @@ body {
   box-sizing: border-box; }
 
 .header {
+  /*95% will leave a little space at the bottom. 100% will cover the whole view port*/
   height: 95vh;
+  /*green gradient will be achieved through this piece*/
+  /*background-image: linear-gradient(#7ed56f, #28b485);*/
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
+  /*background-top will crop the bottom and the everything on the top will stay the same.*/
+  /*background bottom will allow the bottom to stay the same. */
+  /*Background center will always crop the bottom and top evenly*/
   background-position: top;
   position: relative;
   /*If I wanted to make a shape. Go to Bennettfeely.com and you can have filters*/
+
+  /******* This creates the strange shaped polygon*******/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logo-box {
     position: absolute;
@@ -115,18 +123,22 @@ body {
   /*this is the shadow....0.2 makes it opaque*/
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
+/*three minutes into secion 2/10*/
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-  .btn:active--white {
+
+.btn:active--white {
     background-color: #fff;
     color: #777; }
+
     .btn:active--white::after {
       background-color: #fff; }
   .btn:active::after {
     content: "";
     display: inline-block;
     height: 100%;
+    width: 100%;
     border-radius: 10rem;
     position: absolute;
     top: 0;
